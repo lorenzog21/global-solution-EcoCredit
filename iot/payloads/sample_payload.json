@@ -1,0 +1,20 @@
+{
+  "_comment": "Exemplo de payload enviado pelo simulador IoT para POST /api/v1/emissions",
+  "facilityId": "fac-001",
+  "gasType": "CO2",
+  "quantityTco2e": 0.0874,
+  "source": "IOT_SENSOR",
+  "sensorId": "sensor-co2-fac-001",
+  "rawPpm": 1092.5,
+  "satelliteCo2Regional": 424.73,
+
+  "_fields": {
+    "facilityId": "ID da instalação industrial no banco de dados",
+    "gasType": "Tipo de gás: CO2, CH4, N2O, HFC, SF6",
+    "quantityTco2e": "Toneladas de CO2 equivalente emitidas no período (calculado a partir do PPM)",
+    "source": "Origem da leitura: IOT_SENSOR | SATELLITE | MANUAL",
+    "sensorId": "Identificador único do sensor físico na instalação",
+    "rawPpm": "Leitura bruta do sensor em PPM (partes por milhão) — sem conversão",
+    "satelliteCo2Regional": "Concentração regional de CO2 em coluna (XCO2 em PPM) do Sentinel-5P (mockado)"
+  }
+}

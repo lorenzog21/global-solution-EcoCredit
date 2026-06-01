@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoCredit — Login Demo (Segurança)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #060a08;
+      color: #ddeedd;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #0b110e;
+      border: 1px solid #1a2e22;
+      border-radius: 16px;
+      padding: 40px;
+      width: 400px;
+    }
+    .logo { color: #00e87a; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+    h1 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+    .subtitle { color: #5a7a60; font-size: 13px; margin-bottom: 32px; }
+    label { display: block; font-size: 12px; color: #5a7a60; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; margin-top: 16px; }
+    input {
+      width: 100%;
+      background: #060a08;
+      border: 1px solid #1a2e22;
+      border-radius: 8px;
+      color: #ffffff;
+      padding: 12px 14px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus { border-color: #00e87a; }
+    button {
+      width: 100%;
+      background: #00e87a;
+      color: #060a08;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 24px;
+      transition: opacity 0.2s;
+    }
+    button:hover { opacity: 0.85; }
+    #feedback {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #0f1a12;
+      font-size: 13px;
+      min-height: 20px;
+      display: none;
+    }
+    .security-note {
+      margin-top: 24px;
+      padding: 12px;
+      background: #0a1a12;
+      border-left: 2px solid #00e87a;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #5a7a60;
+    }
+    .security-note strong { color: #00e87a; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">EcoCredit</div>
+    <h1>Login</h1>
+    <p class="subtitle">Demo de segurança — BCrypt + JWT</p>
+
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="admin@petro.com" maxlength="200" autocomplete="email" />
+
+      <label for="password">Senha</label>
+      <input type="password" id="password" placeholder="••••••••" maxlength="128" autocomplete="current-password" />
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div id="feedback"></div>
+
+    <div class="security-note">
+      <strong>Credencial demo:</strong><br>
+      Email: admin@petro.com<br>
+      Senha: Admin@2026<br><br>
+      <strong>Práticas aplicadas:</strong> Sanitização XSS, validação de formato, mensagem de erro genérica.
+    </div>
+  </div>
+  <script src="auth.js"></script>
+</body>
+</html>
