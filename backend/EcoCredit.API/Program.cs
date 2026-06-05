@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using EcoCredit.API.Data;
+using EcoCredit.API.Middleware;
 using EcoCredit.API.Services;
 using EcoCredit.API.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,10 @@ builder.Services.AddScoped<IAlertRepository, AlertRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<EmissionService>();
+builder.Services.AddScoped<CompanyService>();
+builder.Services.AddScoped<FacilityService>();
+builder.Services.AddScoped<CreditService>();
+builder.Services.AddScoped<AlertService>();
 
 // ── JWT ──
 var jwtKey = builder.Configuration["Jwt:Key"]
@@ -77,6 +82,7 @@ using (var scope = app.Services.CreateScope()) {
     ctx.Database.EnsureCreated();
 }
 
+app.UseExceptionMiddleware();
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EcoCredit v1"));
 app.UseCors("AllowAll");

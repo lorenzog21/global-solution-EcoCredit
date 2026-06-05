@@ -1,0 +1,53 @@
+FIAP Global Solution 2026/1
+Disciplina: Engenharia de Software — 4º Ano
+Projeto: EcoCredit — Plataforma de Monitoramento Ambiental & ESG
+
+========================================
+INTEGRANTES
+========================================
+
+Nome: [NOME COMPLETO INTEGRANTE 1]
+RM: RM[XXXXX]
+
+Nome: [NOME COMPLETO INTEGRANTE 2]
+RM: RM[XXXXX]
+
+Nome: [NOME COMPLETO INTEGRANTE 3]
+RM: RM[XXXXX]
+
+========================================
+LINKS
+========================================
+
+Repositório GitHub:
+[INSERIR LINK DO REPOSITÓRIO]
+
+Vídeo Pitch (YouTube — unlisted ou público, máx. 3 minutos):
+[INSERIR LINK DO YOUTUBE]
+
+========================================
+INSTRUÇÕES DE EXECUÇÃO
+========================================
+
+Backend:
+  cd backend
+  dotnet run --project EcoCredit.API/EcoCredit.API.csproj
+  Swagger: http://localhost:5000/swagger
+
+Testes:
+  cd backend
+  dotnet test EcoCredit.sln
+
+Mobile:
+  cd mobile/ecocredit-mobile
+  npm install --legacy-peer-deps
+  npx expo start --ios
+
+IoT Simulator:
+  cd iot
+  pip install -r requirements.txt
+  python sensor_simulator.py
+
+Credenciais demo:
+  admin@petro.com   /  Admin@2026   (role: ADMIN)
+  analyst@petro.com /  Analyst@2026 (role: ANALYST)
